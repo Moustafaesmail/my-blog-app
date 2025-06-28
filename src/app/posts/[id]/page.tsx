@@ -1,10 +1,11 @@
 import PostWithComments from '@/components/PostWithComments';
 
-// ✅ Correct prop type for a server component with dynamic route param
-type Props = {
-  params: { id: string };
+type Params = {
+  params: {
+    id: string;
+  };
 };
 
-export default function PostDetailPage({ params }: Props) {
+export default function PostDetailPage({ params }: Params) {
   return <PostWithComments id={params.id} />;
 }
