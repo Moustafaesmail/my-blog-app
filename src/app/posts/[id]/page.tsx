@@ -1,6 +1,8 @@
 import PostWithComments from '@/components/PostWithComments';
+import { use } from 'react';
 
-export default async function PostDetailPage({ params }: { params: { id: string } }) {
-  const { id } = params; // This is now safe
+export default function PostDetailPage(props: any) {
+  const { id } = use(props.params) as { id: string }; // ✅ explicitly typed
+
   return <PostWithComments id={id} />;
 }
